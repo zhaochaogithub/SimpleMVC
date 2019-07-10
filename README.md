@@ -51,11 +51,11 @@ public class JettyTest
 		
 		configPro.setActionPackagePath("com.zchao.action");
 		
-//		configPro.setInterceptor(new ExceptionInterceptor());
+		//configPro.setInterceptor(new ExceptionInterceptor());
 
-//		configPro.setDbMap(DataSourceFactory.initDataSourcePool());
+		//configPro.setDbMap(DataSourceFactory.initDataSourcePool());
 
-//		configPro.setDefaultDataSource(DataSourceFactory.getDefaultDataSource());
+		//configPro.setDefaultDataSource(DataSourceFactory.getDefaultDataSource());
 
 		ConfigPro.setConfigPro(configPro);
 		
@@ -74,27 +74,23 @@ public class JettyTest
 controller层
 
 @Action(value = "/A")
+
 public class AController
 {
-
 	private AService aService = ProxyService.getProxy(AService.class);
 	
 	public String t(HttpServletRequest request) throws Exception
 	{
-	
 		return "恭喜你，成功了！";
-		
 	}
-	
 }
 
 Service层
 
+
 public class AService
 {
-
 	private Dao dao = new Dao();
-	
 	//@Tx表示是否开始事务的标记
 	@Tx
 	public double t(int n) throws Exception
@@ -107,5 +103,4 @@ public class AService
 		return 1d;
 		
 	}
-	
 }
