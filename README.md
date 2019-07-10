@@ -75,8 +75,8 @@ controller层
 
 @Action(value = "/A")
 
-public class AController
-{
+public class AController{
+
 	private AService aService = ProxyService.getProxy(AService.class);
 	
 	public String t(HttpServletRequest request) throws Exception
@@ -87,14 +87,13 @@ public class AController
 
 Service层
 
+public class AService{
 
-public class AService
-{
 	private Dao dao = new Dao();
+	
 	//@Tx表示是否开始事务的标记
 	@Tx
-	public double t(int n) throws Exception
-	{
+	public double t(int n) throws Exception{
 	
   		Map<String, String> map = dao.find("select * from  ykb_hotel_log limit 1", Map.class);	
 		
